@@ -58,7 +58,7 @@ mod bench {
     use self::test::Bencher;
     use std::iter;
 
-    static BENCH_SIZE: usize = 100_000;
+    static BENCH_SIZE: usize = 1000000;
     macro_rules! bench {
         ($name:ident, $func:ident) => {
             #[bench]
@@ -78,5 +78,8 @@ mod bench {
     }
 
     bench!(vanilla, mul_assign);
+
     bench!(simd, simd_mul_assign);
 }
+
+// fn main() {}
